@@ -21,62 +21,26 @@
             <img src="./imgs/logo.png" class="hidden w-14 md:block md:w-16 rounded-full" alt="logo">
             <div class="flex mt-24">
                 <div class="flex-col">
-                    <h1 class="font-bebas text-3xl leading-none md:text-[15rem]">DEVATHON</h1>
-                    <p class="font-work text-2xl w-full md:w-8/12">Welcome to the first ever event where you could get
-                        the
-                        oppurtunity to be part of the web
-                        development
-                        community of IITM</p>
+                    <h1 class="font-bebas text-[2.75rem] leading-none md:text-[10vw]">DEVATHON</h1>
+                    <p class="font-work text-xl w-full md:w-8/12">Welcome to the first ever event where you could get the oppurtunity to be part of the web development community of IITM</p>
                 </div>
 
                 <img class="hidden md:block w-5/12" src="./imgs/mainpage1.svg" alt="" srcset="">
             </div>
         </nav>
-        <section class="about flex bg-yellow-500 items-center text-black font-black p-8 h-96">
-            <h1 class="font-bebas text-8xl text-center w-full -rotate-90">About</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam explicabo laboriosam nemo a maiores ad,
-                harum dolor officia veritatis unde vitae atque sequi nihil nisi sed optio numquam quo praesentium
-                inventore quod asperiores. Deleniti, ullam, molestias officia maiores similique tempore pariatur, cumque
-                minus voluptates recusandae enim error delectus! Aut eaque iste dolorem magnam repudiandae ratione!
-                Necessitatibus molestiae error saepe voluptatum, ea quas repellendus ullam natus debitis sunt vel dicta,
-                recusandae facilis! Nisi eum impedit beatae illum exercitationem. Aliquid, dignissimos quod iusto
-                blanditiis, debitis voluptas exercitationem, maxime repudiandae quis quam error nihil? Necessitatibus
-                quasi dolore tempora praesentium, fugiat at quod ullam.</p>
-        </section>
-        <section class="about flex bg-black items-center text-white font-black p-8 h-96">
-            <h1 class="font-bebas text-8xl text-center w-full -rotate-90">Timeline</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam explicabo laboriosam nemo a maiores ad,
-                harum dolor officia veritatis unde vitae atque sequi nihil nisi sed optio numquam quo praesentium
-                inventore quod asperiores. Deleniti, ullam, molestias officia maiores similique tempore pariatur, cumque
-                minus voluptates recusandae enim error delectus! Aut eaque iste dolorem magnam repudiandae ratione!
-                Necessitatibus molestiae error saepe voluptatum, ea quas repellendus ullam natus debitis sunt vel dicta,
-                recusandae facilis! Nisi eum impedit beatae illum exercitationem. Aliquid, dignissimos quod iusto
-                blanditiis, debitis voluptas exercitationem, maxime repudiandae quis quam error nihil? Necessitatibus
-                quasi dolore tempora praesentium, fugiat at quod ullam.</p>
-        </section>
-        <section class="about flex bg-yellow-500 items-center text-black font-black p-8 h-96">
-            <h1 class="font-bebas text-8xl text-center w-full -rotate-90">Contact</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam explicabo laboriosam nemo a maiores ad,
-                harum dolor officia veritatis unde vitae atque sequi nihil nisi sed optio numquam quo praesentium
-                inventore quod asperiores. Deleniti, ullam, molestias officia maiores similique tempore pariatur, cumque
-                minus voluptates recusandae enim error delectus! Aut eaque iste dolorem magnam repudiandae ratione!
-                Necessitatibus molestiae error saepe voluptatum, ea quas repellendus ullam natus debitis sunt vel dicta,
-                recusandae facilis! Nisi eum impedit beatae illum exercitationem. Aliquid, dignissimos quod iusto
-                blanditiis, debitis voluptas exercitationem, maxime repudiandae quis quam error nihil? Necessitatibus
-                quasi dolore tempora praesentium, fugiat at quod ullam.</p>
-        </section>
-        <section class="about flex bg-black items-center text-white font-black p-8 h-96">
-            <h1 class="font-bebas text-8xl text-center w-full -rotate-90">FAQ</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam explicabo laboriosam nemo a maiores ad,
-                harum dolor officia veritatis unde vitae atque sequi nihil nisi sed optio numquam quo praesentium
-                inventore quod asperiores. Deleniti, ullam, molestias officia maiores similique tempore pariatur, cumque
-                minus voluptates recusandae enim error delectus! Aut eaque iste dolorem magnam repudiandae ratione!
-                Necessitatibus molestiae error saepe voluptatum, ea quas repellendus ullam natus debitis sunt vel dicta,
-                recusandae facilis! Nisi eum impedit beatae illum exercitationem. Aliquid, dignissimos quod iusto
-                blanditiis, debitis voluptas exercitationem, maxime repudiandae quis quam error nihil? Necessitatibus
-                quasi dolore tempora praesentium, fugiat at quod ullam.</p>
+        <section class="about text-center flex justify-center items-center font-bebas p-8">
+            <div>
+                <h2 class="font-bebas text-[2rem] leading-none md:text-[5vw]" style="font-weight: 300;">Releasing the hackathon prompts in:</h2>
+                <div id="timer">
+                    <div id="days"></div>
+                    <div id="hours"></div>
+                    <div id="minutes"></div>
+                    <div id="seconds"></div>
+                </div>
+            </div>
         </section>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -99,6 +63,34 @@
                 }
             }
         }
+        function makeTimer() {
+
+        //		var endTime = new Date("29 April 2018 9:56:00 GMT+01:00");	
+            var endTime = new Date("11 August 2022 00:00:00 GMT+05:30");			
+                endTime = (Date.parse(endTime) / 1000);
+
+                var now = new Date();
+                now = (Date.parse(now) / 1000);
+
+                var timeLeft = endTime - now;
+
+                var days = Math.floor(timeLeft / 86400); 
+                var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+                var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
+                var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+
+                if (hours < "10") { hours = "0" + hours; }
+                if (minutes < "10") { minutes = "0" + minutes; }
+                if (seconds < "10") { seconds = "0" + seconds; }
+
+                $("#days").html(days + "<span>Days</span>");
+                $("#hours").html(hours + "<span>Hours</span>");
+                $("#minutes").html(minutes + "<span>Minutes</span>");
+                $("#seconds").html(seconds + "<span>Seconds</span>");		
+
+        }
+
+        setInterval(function() { makeTimer(); }, 1000);
     </script>
 </body>
 
